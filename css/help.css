@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/***** General Settings *****/
+
+:root {
+    --background: #F4F4F4;
+    --mainicolor: #8F6554;
+    --secend-color: #E4D0BE;
+    --hover-color: #e4d0be96;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #707070;
+    --fotter-color: #fff;
+    --p-color: #3e3d3d;
+    --side-color: #fff;
+    --logo-font: 2.9rem;
+    --big-font: 2.5rem;
+    --h3-font: 2.2em;
+    --special-titre: 2.9rem;
+
+
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+}
+
+.dark-mode {
+    transition: 0.8s;
+    --background: #3C4244;
+    --mainicolor: #d2b093;
+    --black-color: #fff;
+    --white-color: #000;
+    --fotter-color: #aaaaaa17;
+    --cards-color: rgba(255, 255, 255, 0.404);
+    --p-color: #cfcfcfda;
+    --text-color: #d0cfcfd4;
+    --hover-color: #d2b2937b;
+    --side-color: #202020;
+}
+
+
+
+/* ==============  Help First Page  ============== */
+
+.help-main {
+    height: 80vh;
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    place-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.help-main img {
+    width: 500px;
+    border-radius: 10px;
+    animation: slideRight 1.5s ease forwards;
+}
+
+.help-main .help-text {
+    animation: slideLeft 1.5s ease forwards;
+}
+
+.help-main .help-text h2 {
+    font-size: var(--h3-font);
+    color: var(--mainicolor);
+    letter-spacing: 2px;
+}
+
+.help-main .help-text p {
+    margin: 30px 0;
+    font-size: 1rem;
+    line-height: 30px;
+    color: var(--p-color);
+}
+
+.help-main .help-text a {
+    letter-spacing: 2px;
+    font-size: 1rem;
+    border: 1px solid var(--mainicolor);
+    border-radius: 10px;
+    font-weight: 500;
+    padding: 0.4rem 0.7rem;
+    text-decoration: none;
+    background-color: var(--mainicolor);
+    color: var(--white-color);
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+.help-main .help-text a:hover {
+    color: var(--black-color);
+    border: 1px solid var(--mainicolor);
+    background-color: var(--background);
+}
+
+.texts {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.texts h4 {
+    color: var(--mainicolor);
+    font-size: 1.2rem;
+}
+
+.texts h3 {
+    color: var(--black-color);
+    font-size: var(--h3-font);
+    margin-bottom: 30px;
+}
+
+
+
+.img1 {
+    position: absolute;
+    width: 160px;
+    border-radius: 10px;
+    width: 100px;
+    top: 120%;
+    left: 15%;
+    animation: moving 6s ease infinite;
+}
+
+.img2 {
+    position: absolute;
+    width: 160px;
+    border-radius: 10px;
+    top: 165%;
+    right: 10%;
+    animation: moving-rev 3s ease infinite;
+}
+
+@keyframes moving {
+    0% {
+        transform: rotate(0);
+    }
+
+    30% {
+        transform: rotate(5deg);
+    }
+
+    60% {
+        transform: rotate(0deg);
+    }
+
+    80% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes moving-rev {
+    0% {
+        transform: rotate(0);
+    }
+
+    80% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+
+/* ==============  Help Chat Area  ============== */
+
+.chat-Area {
+    width: 50%;
+    height: 75vh;
+    margin: 20px auto;
+    border-radius: 5px;
+    background-color: var();
+    border: 1px solid var(--p-color);
+}
+
+
+
+.chat-haeder {
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--p-color);
+}
+
+.chat-haeder h3 {
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    color: var(--black-color);
+}
+
+.chat-box {
+    padding: 30px 30px;
+    overflow-y: auto;
+    height: 80%;
+    box-shadow: 0 -1px 15px rgba(0, 0, 0, 0.242) inset;
+}
+
+.chat-box::-webkit-scrollbar {
+    width: 2px;
+}
+
+.chat-box::-webkit-scrollbar {
+    width: 3px;
+}
+
+.chat-box p {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    word-wrap: break-word;
+
+}
+
+.chatM {
+    margin-bottom: 10px;
+    max-width: 60%;
+    box-shadow: 2px 2px 8px #00000038;
+    transition: 0.8s;
+}
+
+.out {
+    background-color: var(--white-color);
+    color: var(--black-color);
+    border-radius: 0 15px 15px 15px;
+}
+
+.in {
+    background-color: var(--mainicolor);
+    color: #fff;
+    border-radius: 15px 15px 0 15px;
+    margin-left: auto;
+}
+
+.typing-area {
+    position: relative;
+    width: 100%;
+    height: 8%;
+    margin: 5px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typing-area input {
+    width: 80%;
+    color: black;
+    font-weight: 700;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.typing-area input::placeholder {
+    color: rgba(0, 0, 0, 0.368);
+}
+
+.typing-area i {
+    position: absolute;
+    right: 5%;
+    font-size: 1.2rem;
+    color: var(--mainicolor);
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.typing-area input:valid~i {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+
+/* ==============  Key Frames  ============== */
+
+@keyframes slideRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+
+
+/* ==============  Responsivity  ============== */
+
+@media(max-width: 1200px) {
+    .help-main img {
+        width: 400px;
+    }
+
+    .img1,.img2 {
+        display: none;
+    }
+}
+
+@media(max-width: 1000px) {
+    .chat-Area {
+        width: 70%;
+        height: 80vh;
+    }
+
+    .help-main {
+        width: 70%;
+    }
+}
+
+@media(max-width: 860px) {
+    .help-main img {
+        width: 320px;
+    }
+}
+
+@media(max-width: 800px) {
+    .chat-box p {
+        font-size: 0.8rem;
+    }
+
+
+}
+
+@media(max-width: 700px) {
+    .help-main {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        height: 60vh;
+        margin: 50px auto;
+    }
+
+    .help-main img {
+        width: 370px;
+        order: 1;
+    }
+
+    .help-main .help-text {
+        width: 80%;
+        text-align: center;
+        order: 2;
+    }
+
+    .texts {
+        margin-top: 80px;
+    }
+    .chat-Area {
+        width: 70%;
+        height: 50vh;
+    }
+
+}
+
+@media(max-width: 600px) {
+    .chat-box p {
+        font-size: 0.7rem;
+    }
+}
+
+
+@media(max-width: 500px) {
+    .chat-box p {
+        font-size: 0.5rem;
+    }
+
+    .chatM {
+        max-width: 77%;
+    }
+}
+
+@media(max-width: 400px) {
+    .help-main img {
+        width: 300px;
+    }
+
+}
+
+
+
+@media(max-width: 290px) {
+    .chat-box p {
+        font-size: 0.4rem;
+    }
+
+    .chatM {
+        max-width: 77%;
+    }
+
+    .chat-Area {
+        width: 80%;
+        height: 45vh;
+    }
+
+    .typing-area input {
+        width: 80%;
+        height: 20px;
+        margin-bottom: 5px;
+        font-size: 0.5rem;
+    }
+}
+
+
+
+/* ==============  responsivity  ============== */
+@media(max-width: 1175px) {
+    :root {
+        --big-font: 2.3rem;
+        --h3-font: 2em;
+        --special-titre: 2.7rem;
+    }
+}
+
+
+
+
+
+@media(max-width: 670px) {
+    :root {
+        --big-font: 2.2rem;
+        --h3-font: 1.6em;
+        --special-titre: 2.4rem;
+    }
+}
+
+
+
+@media(max-width: 455px) {
+    :root {
+        --big-font: 1.8rem;
+        --h3-font: 1.2em;
+        --special-titre: 2rem;
+    }
+}
+
+@media(max-width: 380px) {
+    :root {
+        --big-font: 1.8rem;
+        --h3-font: 1em;
+        --special-titre: 2rem;
+        --logo-font: 2rem;
+    }
+}
