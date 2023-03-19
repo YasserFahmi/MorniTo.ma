@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Importing Icons  -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- Importing Icon-->
+    <link rel="icon" href="imges/MorniTo-icon.png">
+    <!-- Importing CSS  -->
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/help.css">
+
+    <script src="jquery-3.6.3.min.js"></script>
+    <title>MorniTo</title>
+</head>
+
+<body>
+
+
+
+    <!-- ------ ==============  Side Bar  ============== ------ -->
+    <div class="side-overlay"></div>
+    <nav id="sidebar" class="sidebar close">
+        <header>
+            <i id="toggle-close" class='bx bx-chevron-right toggle'></i>
+
+
+            <div class="text logo-text">
+                <span class="name">Menu</span>
+            </div>
+            </div>
+
+
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="index.html">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text ">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="Products/index_MainPage(Products).html">
+
+                            <i class='bx bx-cart icon'></i>
+                            <span class="text nav-text">Products</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="about.html">
+                            <i class='bx bx-smile icon'></i>
+                            <span class="text nav-text">About Us</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="account.html">
+                            <i class='bx bx-user icon'></i>
+                            <span class="text nav-text">Accaunts</span>
+                        </a>
+                    </li>
+                    <li class="nav-link  active">
+                        <a href="#">
+                            <i class='bx bx-help-circle icon'></i>
+                            <span class="text nav-text">Help</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon side_moon'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="Sw"></span>
+
+                    </div>
+                </li>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <div id="All">
+
+        <!-- ------ ==============  Go to  ============== ------ -->
+        <div class="goTo">
+            <a href="#"><i class="fa-solid fa-arrow-up"></i></a>
+        </div>
+
+
+        <!-- ------ ==============  Switch buttons  ============== ------ -->
+        <div class="switch">
+            <i id="moon" class='bx bx-moon icon moon'></i>
+            <i id="sun" class='bx bx-sun icon sun'></i>
+        </div>
+
+        <!-- ------ ==============  Nav Bar  ============== ------ -->
+
+        <div class="overlay"></div>
+        <nav class="navigation">
+
+            <h2 class="logo">Morni<span>To</span></h2>
+
+
+
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Products/index_MainPage(Products).html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="account.html">Account</a></li>
+                <li><a id="active">Help</a></li>
+            </ul>
+            <div class="card-container">
+                <i class='bx bx-cart card'></i>
+                <span id="notif">0</span>
+            </div>
+
+            <i id="toggle-open" class='bx bx-chevron-left toggle'></i>
+
+        </nav>
+
+
+
+        <div class="help-main">
+            <div class="help-text">
+                <h2>Suppoort And Help</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis distinctio suscipit quaerat
+                    recusandae
+                    error et quibusdam. Itaque, nulla alias? Accusamus?
+                </p>
+                <a href="#chat">Learn More</a>
+            </div>
+            <img src="imges/Help-hero.png" alt="">
+        </div>
+
+        <div class="texts">
+            <h4 data-aos="fade-left" data-aos-duration="500">Chat</h4>
+            <h3 data-aos="fade-right" data-aos-duration="500" id="chat">Let's Talk Dear !</h3>
+        </div>
+        <img data-aos="fade-right" data-aos-duration="1000" class="img1" src="imges/help-img1.png" alt="">
+        <img data-aos="fade-left" data-aos-duration="1000" class="img2" src="imges/help-img2.png" alt="">
+        <!-- ------ ==============  Chat Area ============== ------ -->
+        <div data-aos="fade" data-aos-duration="1000" class="chat-Area">
+            <div class="chat-haeder">
+                <h3>Chat-MorniTo</h3>
+            </div>
+
+
+            <div class="chat-box">
+                <div class="chatM out">
+                    <p>Hello! , how can i help you?</p>
+                </div>
+            </div>
+
+
+            <form action="#" class="typing-area">
+                <input id="send-text" type="text" placeholder="Type a message" required>
+                <i class='bx bxs-send' id="send-btn"></i>
+            </form>
+
+        </div>
+    </div>
+
+
+
+    <footer>
+        <div class="main-foot">
+            <div class="col">
+                <h3>Menu Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Products/index_MainPage(Products).html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="">Web Design</a></li>
+                    <li><a href="">Web Developpemnt</a></li>
+                    <li><a href="">Product Management</a></li>
+                </ul>
+
+            </div>
+            <div class="col">
+                <h3>Information</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Privacy & Policy</a></li>
+                    <li><a href="#">Termes & Conditions</a></li>
+                </ul>
+            </div>
+
+            <div class="col ">
+                <h3>Contact Us</h3>
+                <ul class="social">
+                    <li><i class="fa-brands fa-instagram"></i></li>
+                    <li><i class="fa-brands fa-twitter"></i></li>
+                    <li><i class="fa-brands fa-facebook"></i></li>
+                    <li><i class="fa-brands fa-linkedin"></i></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <section class="copyright">
+        <p>All rights reserved to MorniTo 2023 ©</p>
+    </section>
+
+
+
+
+
+
+
+
+    <script src="scripts/General.js"></script>
+    <script src="scripts/jquery-3.6.3.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        $(document).ready(function () {
+            $('#send-btn').on('click', function () {
+                $value = $('#send-text').val();
+                $msg = '<div class="chatM in"><p>' + $value + '</p></div>';
+                $('.chat-box').append($msg);
+                $('#send-text').val('')
+                $msg_bot = '<div class="chatM out"><p>' + 'Not Working Yet' + '</p></div>';
+                $('.chat-box').append($msg_bot);
+            })
+        })
+    </script>
+
+</body>
+
+</html>

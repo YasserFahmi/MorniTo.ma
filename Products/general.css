@@ -1,0 +1,986 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+/***** General Settings *****/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--background);
+  transition: 0.8s;
+}
+
+*::selection {
+  background-color: var(--mainicolor);
+  color: var(--white-color);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: linear-gradient(transparent, var(--mainicolor));
+}
+
+:root {
+  --background: #f4f4f4;
+  --mainicolor: #8f6554;
+  --secend-color: #e4d0be;
+  --hover-color: #e4d0be96;
+  --white-color: #fff;
+  --black-color: #000;
+  --text-color: #707070;
+  --fotter-color: #fff;
+  --p-color: #3e3d3d;
+  --side-color: #fff;
+  --logo-font: 2.9rem;
+  --big-font: 2.5rem;
+  --h3-font: 2.2em;
+  --special-titre: 2.9rem;
+
+  /* ====== Transition ====== */
+  --tran-03: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.3s ease;
+  --tran-05: all 0.3s ease;
+}
+
+.dark-mode {
+  transition: 0.8s;
+  --background: #3c4244;
+  --mainicolor: #d2b093;
+  --black-color: #fff;
+  --white-color: #000;
+  --fotter-color: #aaaaaa17;
+  --cards-color: rgba(255, 255, 255, 0.404);
+  --p-color: #cfcfcfda;
+  --text-color: #d0cfcfd4;
+  --hover-color: #d2b2937b;
+  --side-color: #202020;
+}
+
+/* ------ Styling NavBar ------ */
+
+.navigation {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.8rem 4rem;
+  transition: 0.7s;
+  z-index: 5;
+}
+
+#toggle-open {
+  height: 25px;
+  width: 25px;
+  background-color: var(--mainicolor);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+  opacity: 0.3;
+  transition: 0.8s;
+  animation: slideLeft 0.5s ease forwards;
+}
+
+#toggle-open:hover {
+  opacity: 1;
+}
+
+.logo {
+  font-size: var(--logo-font);
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-family: "Lobster", cursive;
+  color: var(--black-color);
+  animation: slideRight 0.5s ease forwards;
+}
+
+.logo span {
+  color: var(--mainicolor);
+}
+
+.navigation ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navigation ul li {
+  list-style: none;
+  margin-left: 65px;
+  animation: slideDown 3s ease forwards;
+}
+
+.navigation ul li a {
+  position: relative;
+  text-decoration: none;
+  color: var(--black-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: 0.7s;
+  cursor: pointer;
+}
+
+.navigation ul li a:hover,
+#active {
+  color: var(--mainicolor);
+}
+
+#active::after {
+  transform-origin: left;
+  transform: scale(1);
+}
+
+.navigation ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background-color: var(--mainicolor);
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scale(0);
+  transition: transform 0.8s;
+}
+
+.navigation ul li a:hover::after {
+  transform-origin: left;
+  transform: scale(1);
+}
+
+.card {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--black-color);
+  animation: slideUp 0.7s ease forwards;
+}
+
+.card-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-container span {
+  position: absolute;
+  top: -10%;
+  right: -50%;
+  padding: 1px 5px;
+  border-radius: 50%;
+  background-color: var(--mainicolor);
+  font-size: 9px;
+  font-weight: bold;
+  color: var(--white-color);
+  animation: slideUp 0.7s ease forwards;
+}
+
+/* styling button Go to Up */
+.goTo {
+  position: fixed;
+  bottom: 5%;
+  width: 25px;
+  height: 35px;
+  left: 1%;
+  border: 2px solid var(--mainicolor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border-bottom-left-radius: 20px;
+}
+
+.goTo a {
+  text-decoration: none;
+}
+
+.goTo i {
+  font-size: 20px;
+  padding: 10px 5px;
+  color: var(--mainicolor);
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+/* styling button switch mode */
+.switch {
+  position: fixed;
+  bottom: 12%;
+  right: 7%;
+}
+
+.switch i {
+  position: absolute;
+  font-size: 30px;
+  cursor: pointer;
+  transition: 0.8s;
+  color: var(--black-color);
+  opacity: 0.3;
+}
+
+.switch i:hover {
+  opacity: 1;
+}
+
+#sun {
+  display: none;
+}
+
+#moon.disable {
+  display: none;
+}
+
+#sun.able {
+  display: block;
+}
+
+/* ---------- Styling login page ---------- */
+
+.overlay {
+  position: absolute;
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1000;
+}
+
+.overlay.active {
+  display: block;
+  background: #15df3300;
+}
+
+.stopScrolling {
+  overflow: hidden;
+}
+
+.login-page {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 6px 30px #000;
+  transition: 0.5s;
+  z-index: 20;
+  opacity: 0.4;
+}
+
+.login-page span i {
+  position: absolute;
+  opacity: 0.3;
+  right: 6%;
+  top: 3%;
+  font-size: 30px;
+  color: var(--mainicolor);
+  cursor: pointer;
+  transition: 0.8s;
+}
+
+.login-page span i:hover {
+  opacity: 1;
+}
+
+.login-page h1 {
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid silver;
+  font-family: "Rowdies", cursive;
+  color: var(--mainicolor);
+}
+
+.login-page form {
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+form .txt_field {
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 0;
+}
+
+.txt_field input {
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.txt_field label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.txt_field span::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--mainicolor);
+  transition: 0.5s;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+  top: -5px;
+  color: var(--mainicolor);
+}
+
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before {
+  width: 100%;
+}
+
+.pass {
+  margin: -5px 0 20px 5px;
+  color: #a6a6a6;
+  cursor: pointer;
+}
+
+.pass:hover {
+  text-decoration: underline;
+}
+
+input[type="reset"] {
+  width: 100%;
+  height: 50px;
+  border: 1px solid;
+  background: var(--mainicolor);
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  transition: 1s;
+}
+
+input[type="reset"]:hover {
+  background-color: var(--white-color);
+  color: #000;
+  border-color: var(--mainicolor);
+}
+
+.signup_link {
+  margin: 30px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #666666;
+}
+
+.signup_link a {
+  color: var(--mainicolor);
+  text-decoration: none;
+}
+
+.signup_link a:hover {
+  text-decoration: underline;
+}
+
+.login-page.active-popup {
+  top: 50%;
+  opacity: 1;
+}
+
+#All.actif {
+  filter: grayscale(100%);
+  transition: 0.7s;
+}
+
+/*   styling sidebare   */
+
+.side-overlay {
+  position: absolute;
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  z-index: 15;
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  right: -500px;
+  height: 100%;
+  width: 250px;
+  padding: 10px 14px;
+  background: var(--side-color);
+  transition: var(--tran-05);
+  z-index: 100;
+  opacity: 0.1;
+  transition: 0.8s;
+}
+
+.open-sidebar {
+  transform: translateX(-500px);
+  opacity: 1;
+}
+
+.sidebar li {
+  height: 50px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.sidebar .icon {
+  min-width: 60px;
+  border-radius: 6px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.sidebar .text,
+.sidebar .icon {
+  color: var(--text-color);
+  transition: var(--tran-03);
+}
+
+.sidebar .text {
+  font-size: 17px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 1;
+}
+
+.sidebar header {
+  position: relative;
+}
+
+.sidebar header .logo-text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+header .image-text .name {
+  margin-top: 2px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.name {
+  color: var(--black-color);
+  font-weight: bold;
+}
+
+#toggle-close {
+  position: absolute;
+  left: -10%;
+  bottom: -70%;
+  height: 35px;
+  width: 35px;
+  background-color: var(--mainicolor);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  cursor: pointer;
+  opacity: 0.3;
+  transition: 0.8s;
+}
+
+#toggle-close:hover {
+  opacity: 1;
+}
+
+.sidebar .menu {
+  margin-top: 40px;
+}
+
+.sidebar .active {
+  border-radius: 6px;
+  background-color: var(--hover-color);
+  cursor: pointer;
+  transition: var(--tran-05);
+}
+
+.sidebar li a {
+  list-style: none;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: var(--tran-03);
+}
+
+.sidebar li a:hover {
+  color: #fff;
+  background-color: var(--mainicolor);
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+  color: #fff;
+}
+
+/* body.dark .sidebar li a:hover .icon,
+body.dark .sidebar li a:hover .text {
+    color: var(--text-color);
+} */
+.mode .mode-text {
+  font-size: 15px;
+}
+
+.sidebar .menu-bar {
+  height: calc(100% - 55px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: scroll;
+}
+
+.menu-bar::-webkit-scrollbar {
+  display: none;
+}
+
+/* hhhhhhhh */
+.sidebar .menu-bar .mode {
+  border-radius: 6px;
+  background-color: var(--hover-color);
+  position: relative;
+  transition: var(--tran-05);
+  margin-bottom: 50px;
+}
+
+.menu-bar .mode .sun-moon {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mode .sun-moon i {
+  position: absolute;
+  transition: 0.4s;
+}
+
+.menu-bar .bottom-content .toggle-switch {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.Sw {
+  background-color: #fff;
+  height: 22px;
+  width: 40px;
+  border-radius: 25px;
+  transition: var(--tran-05);
+}
+
+.Sw::before {
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  top: 50%;
+  left: 22%;
+  transform: translateY(-50%);
+  background-color: gray;
+  transition: 0.4s;
+}
+
+.Sw_active::before {
+  transition: 0.8s;
+  left: 52%;
+  background-color: var(--mainicolor);
+  box-shadow: 1px -1px 10px var(--mainicolor);
+}
+
+/****** styling footer ******/
+footer {
+  transition: 0.8s;
+  padding: 50px 0;
+  background-color: var(--fotter-color);
+}
+
+.main-foot {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  width: 25%;
+}
+
+.col h3 {
+  color: var(--black-color);
+  font-size: 1.2rem;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.col h3::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 50px;
+  left: 0;
+  bottom: -8px;
+  background-color: var(--mainicolor);
+}
+
+.col ul li {
+  margin-bottom: 20px;
+  list-style: none;
+}
+
+.col ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: rgb(99, 99, 99);
+  font-weight: 500;
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.col ul li a:hover {
+  transform: translateX(-12px);
+  color: var(--black-color);
+}
+
+.social {
+  display: flex;
+  margin: 30px 0;
+}
+
+.social li {
+  list-style: none;
+  margin: 20px 0;
+  margin-right: 30px;
+}
+
+.social li i {
+  opacity: 0.4;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: 0.8s;
+}
+
+.social li i:hover {
+  opacity: 1;
+  color: var(--mainicolor);
+}
+.copyright {
+  transition: 0.8s;
+  background-color: var(--background);
+  color: var(--black-color);
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 8px 0;
+}
+
+/* key frames */
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* resposivity */
+
+@media (max-width: 1200px) {
+  .switch {
+    display: none;
+  }
+
+  :root {
+    --logo-font: 3rem;
+  }
+
+  .navigation {
+    padding: 5px 40px;
+  }
+
+  .sidebar {
+    display: block;
+  }
+
+  #btn {
+    position: absolute;
+    right: 100px;
+  }
+
+  .navigation ul {
+    display: none;
+  }
+
+  #toggle-open {
+    display: block;
+  }
+
+  .card-container {
+    position: absolute;
+    right: 10%;
+    top: 34%;
+  }
+
+  #toggle.active {
+    right: 300px;
+    font-size: 2.5rem;
+  }
+
+  .navigation button {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  :root {
+    --logo-font: 2.8rem;
+  }
+
+  .card-container {
+    position: absolute;
+    right: 11%;
+    top: 34%;
+  }
+}
+
+@media (max-width: 850px) {
+  .login-page {
+    width: 350px;
+  }
+
+  .txt_field input {
+    font-size: 13px;
+  }
+
+  .txt_field label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+  }
+
+  .signup_link {
+    margin: 20px 0;
+  }
+
+  .col {
+    width: 50%;
+  }
+
+  .card-container {
+    position: absolute;
+    right: 14%;
+    top: 34%;
+  }
+}
+
+@media (max-width: 700px) {
+  .card-container {
+    position: absolute;
+    right: 17%;
+    top: 34%;
+  }
+}
+
+@media (max-width: 550px) {
+  .card-container {
+    position: absolute;
+    right: 19%;
+    top: 34%;
+  }
+}
+
+@media (max-width: 501px) {
+  :root {
+    --logo-font: 2.3rem;
+  }
+
+  .sidebar header .toggle {
+    position: absolute;
+    top: 68%;
+    left: -70px;
+    height: 25px;
+    width: 25px;
+    font-size: 23px;
+  }
+
+  .login-page {
+    width: 300px;
+  }
+
+  #btn {
+    padding: 0.2rem 0.3rem;
+    font-size: 0.7rem;
+  }
+
+  .navigation {
+    padding: 5px 20px;
+  }
+
+  .navigation i {
+    font-size: 1.7rem;
+  }
+
+  .card-container {
+    position: absolute;
+    right: 17%;
+    top: 30%;
+  }
+
+  .sidebar header .toggle {
+    left: -10%;
+  }
+  .copyright {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .navigation {
+    padding: 5px 15px;
+  }
+}
+
+@media (max-width: 351px) {
+  :root {
+    --logo-font: 2rem;
+  }
+
+  .navigation {
+    padding: 5px 15px;
+  }
+
+  #btn {
+    right: 80px;
+    padding: 0.1rem 0.2rem;
+    font-size: 0.6rem;
+  }
+
+  .navigation i {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .col {
+    width: 100%;
+  }
+}
+
+@media (max-width: 340px) {
+  .card-container {
+    position: absolute;
+    right: 20%;
+    top: 30%;
+  }
+}
+
+@media (max-width: 300px) {
+  :root {
+    --logo-font: 1.7rem;
+  }
+
+  .navigation {
+    padding: 5px 10px;
+  }
+
+  #btn {
+    right: 50px;
+  }
+
+  .navigation i {
+    font-size: 1.2rem;
+    right: 20px;
+  }
+  .copyright {
+    font-size: 10px;
+  }
+}

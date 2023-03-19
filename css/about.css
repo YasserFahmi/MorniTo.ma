@@ -1,0 +1,723 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/***** General Settings *****/
+
+:root {
+    --background: #F4F4F4;
+    --mainicolor: #8F6554;
+    --secend-color: #E4D0BE;
+    --hover-color: #e4d0be96;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #707070;
+    --fotter-color: #fff;
+    --p-color: #3e3d3d;
+    --side-color: #fff;
+    --logo-font: 2.9rem;
+    --big-font: 2.5rem;
+    --h3-font: 2em;
+    --special-titre: 2.9rem;
+
+
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+}
+
+.dark-mode {
+    transition: 0.8s;
+    --background: #3C4244;
+    --mainicolor: #d2b093;
+    --black-color: #fff;
+    --white-color: #000;
+    --fotter-color: #aaaaaa17;
+    --cards-color: rgba(255, 255, 255, 0.404);
+    --p-color: #cfcfcfda;
+    --text-color: #d0cfcfd4;
+    --hover-color: #d2b2937b;
+    --side-color: #202020;
+}
+
+
+
+/* ==============  Section One  ============== */
+.section-p1 {
+    display: flex;
+    align-items: center;
+    margin: 30px auto;
+    width: 80%;
+    height: 70vh;
+    animation: slideLeft .5s ease forwards;
+}
+
+.section-p1 img {
+    width: 40%;
+    height: auto;
+    border-radius: 10px;
+    animation: slideRight 1s ease forwards;
+}
+
+
+
+.about-text {
+    padding-left: 40px;
+    line-height: 25px;
+}
+
+.about-text h2 {
+    font-size: var(--h3-font);
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--mainicolor);
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    color: var(--p-color);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    line-height: 2rem;
+    margin: 30px 0;
+}
+
+/* ==============  Section Two  ============== */
+.section-p2 {
+    width: 80%;
+    margin: 50px auto;
+}
+
+.section-p2 h4 {
+    color: var(--mainicolor);
+    font-size: 1.2rem;
+
+}
+
+.section-p2 h3 {
+    color: var(--black-color);
+    font-size: var(--h3-font);
+    margin-bottom: 40px;
+
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.two-details {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.detail {
+    width: 50%;
+}
+
+.detail h2 {
+    margin: 30px 20px;
+    font-size: 1.6rem;
+    color: var(--mainicolor);
+}
+
+.text-icon li {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 35px 0;
+}
+
+.text-icon li i {
+    font-size: 20px;
+    margin: 5px 20px;
+    color: var(--mainicolor);
+}
+
+.text-icon li p {
+    color: var(--p-color);
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+
+.section-p2 .details .map {
+    width: 50%;
+    height: 400px;
+}
+
+.section-p2 .details .map iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* ==============  Section Three  ============== */
+#form-details {
+    width: 80%;
+    margin: 60px auto;
+    text-align: center;
+}
+
+#form-details h4 {
+    color: var(--mainicolor);
+    font-size: 1.2rem;
+
+}
+
+#form-details h3 {
+    color: var(--black-color);
+    font-size: var(--h3-font);
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    width: 70%;
+    display: grid;
+    margin: 0 auto;
+    margin-top: 2.55rem;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 1rem;
+}
+
+.inputs-zone {
+    position: relative;
+}
+
+.contact-form .w-100 {
+    grid-column: span 2;
+}
+
+.inputs-zone input {
+    width: 100%;
+    padding: 1.5rem 1.35rem calc(0.75rem - 2px) 1.35rem;
+    border: 2px solid transparent;
+    outline: none;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: 0.7s;
+    color: #000;
+}
+
+
+.inputs-zone label {
+    position: absolute;
+    top: 50%;
+    left: calc(1.35rem + 2px);
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-weight: bold;
+    color: #b1b0b0d4;
+    transition: 0.7s;
+}
+
+.inputs-zone .icon {
+    position: absolute;
+    right: calc(1.35rem + 2px);
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 1.25rem;
+    color: #b1b0b0d4;
+    transition: 0.7s;
+}
+
+.textarea {
+    position: relative;
+}
+
+textarea {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    min-height: 150px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    padding: 2.5rem 1.35rem calc(0.75rem - 2px) 1.35rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: 0.7s;
+    color: #000;
+}
+
+
+.textarea label {
+    position: absolute;
+    transform: none;
+    top: 1.7rem;
+}
+
+.textarea .icon {
+    position: absolute;
+    top: 2rem;
+    transform: none;
+}
+
+.focus label {
+    color: #8F6554;
+}
+
+.focus .icon {
+    color: #8F6554;
+}
+
+.not-empty label {
+    font-size: .8rem;
+    top: 0.9rem;
+}
+
+.contact-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    grid-column: span 2;
+}
+
+.contact-btns button {
+    letter-spacing: 2px;
+    font-size: 1rem;
+    border: 1px solid var(--mainicolor);
+    border-radius: 10px;
+    font-weight: 500;
+    padding: 0.8rem 0.7rem;
+    text-decoration: none;
+    background-color: var(--mainicolor);
+    color: var(--white-color);
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+.contact-btns .delet {
+    background-color: rgb(126, 126, 126);
+    border: 1px solid rgb(126, 126, 126);
+}
+
+.contact-btns button:hover {
+    color: var(--black-color);
+    border: 1px solid var(--mainicolor);
+    background-color: var(--background);
+}
+
+.contact-btns .delet:hover {
+    color: var(--black-color);
+    border: 1px solid rgb(126, 126, 126);
+    background-color: var(--background);
+}
+
+
+
+/* ==============  Section Foor  ============== */
+
+
+.our-team {
+    width: 80%;
+    margin: 70px auto;
+    text-align: center;
+}
+
+.our-team h4 {
+    color: var(--mainicolor);
+    font-size: 1.2rem;
+}
+
+.our-team h3 {
+    color: var(--black-color);
+    font-size: var(--h3-font);
+    margin-bottom: 20px;
+}
+
+.teams {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.team {
+    position: relative;
+    width: 300px;
+    margin: 20px 0;
+    border-radius: 10px;
+    border: 1px solid var(--black-color);
+    transition: 0.7s;
+    cursor: pointer;
+}
+
+
+.img-section {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: var(--side-color);
+    transition: 0.7s;
+}
+
+.team img {
+    width: 200px;
+    padding: 10px;
+}
+
+.teams h5 {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    color: var(--mainicolor);
+    transition: 1s;
+}
+
+.teams p {
+    font-size: 0.8rem;
+    color: var(--p-color);
+    margin: 10px 0;
+    transition: 1s;
+}
+
+.links {
+    position: absolute;
+    width: 100%;
+    top: 47%;
+}
+
+.links ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.links ul li {
+    list-style: none;
+}
+
+.links ul li a {
+    position: absolute;
+    transform: translateX(-50%);
+    text-decoration: none;
+    font-size: 2rem;
+    color: var(--mainicolor);
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.507);
+    opacity: 0;
+    transition: 0.6s;
+}
+
+.links ul li a :hover {
+    transition: .6s;
+    transform: scale(1.4);
+}
+
+.team:hover .links ul li a {
+    opacity: 1;
+}
+
+.team:hover .img-section,
+.team:hover h5,
+.team:hover p {
+    opacity: .2;
+}
+
+
+
+/* ==============  Key Frames  ============== */
+@keyframes slideRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+/* ==============  responsivity  ============== */
+@media(max-width: 1175px) {
+    :root {
+        --big-font: 2.3rem;
+        --h3-font: 2em;
+        --special-titre: 2.7rem;
+    }
+
+
+    .teams {
+        gap: 2rem;
+    }
+
+    .team {
+        width: 250px;
+    }
+
+    .team h5 {
+        font-size: 1.2rem;
+    }
+
+    .team p {
+        font-size: 0.7rem;
+    }
+}
+
+@media(max-width: 1045px) {
+    .about-text p {
+        color: var(--p-color);
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        line-height: 1.5rem;
+        margin: 30px 0;
+    }
+
+    .section-p2 .details .map iframe {
+        width: 90%;
+        height: 90%;
+    }
+
+    .text-icon li {
+        margin: 25px 0;
+    }
+
+    .our-team {
+        width: 90%;
+    }
+
+    #form-details {
+        margin: 30px auto;
+    }
+
+}
+
+@media(max-width: 928px) {
+    .about-text p {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+        line-height: 1.2rem;
+        margin: 30px 0;
+    }
+
+    .section-p2 .details .map iframe {
+        width: 85%;
+        height: 75%;
+    }
+
+    .section-p2 {
+        width: 90%;
+    }
+
+    .text-icon li {
+        margin: 15px 0;
+    }
+
+    .text-icon li p {
+        font-size: 12px;
+    }
+
+    .text-icon li i {
+        font-size: 17px;
+    }
+
+    .teams {
+        gap: 0.5rem;
+    }
+
+    .our-team {
+        width: 100%;
+    }
+}
+
+@media(max-width: 850px) {
+    .section-p2 {
+        width: 90%;
+    }
+
+    .about-text p {
+        margin: 10px 0;
+    }
+}
+
+@media(max-width: 758px) {
+
+    .section-p2 {
+        width: 95%;
+    }
+
+    #form-details {
+        width: 90%;
+    }
+}
+
+@media(max-width: 670px) {
+    :root {
+        --big-font: 2.2rem;
+        --h3-font: 1.6em;
+        --special-titre: 2.4rem;
+    }
+
+    .two-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section-p2 .details .map iframe {
+        width: 100%;
+        height: 80%;
+    }
+
+    .detail h2 {
+        text-align: center;
+    }
+
+    .about-text p {
+        font-size: 0.5rem;
+        letter-spacing: 1px;
+        line-height: 1rem;
+        margin: 10px 0;
+    }
+
+    .section-p2 h3 {
+        margin-bottom: 10px;
+
+    }
+
+    #form-details {
+        width: 100%;
+    }
+    .contact-form {
+        width: 90%;
+    }
+
+    .section-p2 .details .map iframe {
+        margin-top: 20px;
+    }
+}
+
+@media(max-width: 550px) {
+
+    .section-p1 {
+        width: 95%;
+    }
+
+    .section-p2 .details .map iframe {
+        height: 70%;
+    }
+    .detail {
+        width: 80%;
+    }
+}
+
+@media(max-width: 500px) {
+    .section-p1 {
+        height: 70vh;
+    }
+
+}
+@media(max-width: 455px) {
+    :root {
+        --big-font: 1.8rem;
+        --h3-font: 1.2em;
+        --special-titre: 2rem;
+    }
+    .section-p1 {
+        display: flex;
+        flex-direction: column;
+    }
+    .section-p1 img {
+        width: 60%;
+        margin-bottom: 40px;
+    }
+    .about-text {
+        width: 80%;
+        padding-left: 0px;
+    }
+    .about-text p {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+        line-height: 1rem;
+        margin: 10px 0;
+    }
+    .inputs-zone label {
+       font-size: 0.9rem;
+    }
+    
+    .inputs-zone .icon {
+        font-size: 0.9rem;
+    }
+    .inputs-zone input {
+        font-size: 0.7rem;
+    }
+    .contact-btns button {
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+        padding: 0.4rem 0.08rem;
+    }
+
+}
+@media(max-width: 380px) {
+    :root {
+        --big-font: 1.8rem;
+        --h3-font: 1em;
+        --special-titre: 2rem;
+        --logo-font: 2rem;
+    }
+    .section-p1 {
+        height: 70vh;
+    }
+    .text-icon li i {
+        font-size: 15px;
+    }
+    
+    .text-icon li p {
+        font-size: 10px;
+    }
+    .detail {
+        width: 100%;
+    }
+    .inputs-zone label {
+        font-size: 0.7rem;
+     }
+     
+     .inputs-zone .icon {
+         font-size: 0.7rem;
+     }
+     .inputs-zone input {
+         font-size: 0.5rem;
+     }
+}

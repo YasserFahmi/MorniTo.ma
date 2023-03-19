@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/***** General Settings *****/
+
+:root {
+    --background: #F4F4F4;
+    --mainicolor: #8F6554;
+    --secend-color: #E4D0BE;
+    --hover-color: #e4d0be96;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #707070;
+    --fotter-color: #fff;
+    --p-color: #3e3d3d;
+    --side-color: #fff;
+    --logo-font: 2.9rem;
+    --big-font: 2.5rem;
+    --h3-font: 2.2em;
+    --special-titre: 2.9rem;
+
+
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+}
+
+.dark-mode {
+    transition: 0.8s;
+    --background: #3C4244;
+    --mainicolor: #d2b093;
+    --black-color: #fff;
+    --white-color: #000;
+    --fotter-color: #aaaaaa17;
+    --cards-color: rgba(255, 255, 255, 0.404);
+    --p-color: #cfcfcfda;
+    --text-color: #d0cfcfd4;
+    --hover-color: #d2b2937b;
+    --side-color: #202020;
+}
+
+
+/* ==============  Container   ============== */
+
+.container {
+    margin: 40px auto;
+    height: 70vh;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .img {
+    width: 50%;
+    animation: slideRight 1s ease forwards;
+}
+
+.container .img img {
+    width: 400px;
+    border-radius: 10px;
+    transition: 0.8s;
+}
+
+.login-content,.registre-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: slideLeft 1s ease forwards;
+}
+/* .registre-content{
+    display: none;
+}
+.login-content{
+    display: none;
+} */
+/* .registre-content.active{
+    opacity: 1;
+}
+.login-content.active{
+    opacity: 0;
+} */
+
+
+form {
+    width: 360px;
+}
+
+.login-content img ,.registre-content img{
+    height: 100px;
+}
+
+.login-content h2 ,.registre-content h2{
+    margin-bottom: 15px;
+    color: var(--black-color);
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+.login-content .input-div ,.registre-content .input-div{
+    position: relative;
+    display: grid;
+    grid-template-columns: 7% 93%;
+    margin: 25px 0;
+    padding: 5px 0;
+    border-bottom: 2px solid #d9d9d9;
+}
+
+.login-content .input-div.one ,.registre-content .input-div.one{
+    margin-top: 0;
+}
+
+.i {
+    color: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.i i {
+    transition: .3s;
+}
+
+.input-div>div {
+    position: relative;
+    height: 45px;
+}
+
+.input-div>div>h5 {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 18px;
+    transition: .3s;
+}
+
+.input-div:before,
+.input-div:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--mainicolor);
+    transition: .4s;
+}
+
+.input-div:before {
+    right: 50%;
+}
+
+.input-div:after {
+    left: 50%;
+}
+
+.input-div.focus:before,
+.input-div.focus:after {
+    width: 50%;
+}
+
+.input-div.focus>div>h5 {
+    top: -5px;
+    font-size: 15px;
+}
+
+.input-div.focus>.i>i {
+    color: var(--mainicolor);
+}
+
+.input-div>div>input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0.5rem 0.7rem;
+    font-size: 1.2rem;
+    color: var(--black-color);
+    font-weight: 700;
+}
+
+.input-div.pass {
+    margin-bottom: 4px;
+}
+
+.links{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+a {
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    color: #999;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+a:hover {
+    color: var(--mainicolor);
+}
+
+.btn {
+    width: 100%;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    border: 1px solid var(--mainicolor);
+    border-radius: 10px;
+    font-weight: 500;
+    margin: 20px 0;
+    padding: 0.8rem 0.3rem;
+    text-decoration: none;
+    background-color: var(--mainicolor);
+    color: var(--white-color);
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+.btn:hover {
+    color: var(--black-color);
+    border: 1px solid var(--mainicolor);
+    background-color: var(--background);
+}
+
+
+@media screen and (max-width: 1050px) {
+    .container {
+        grid-gap: 5rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    form {
+        width: 290px;
+    }
+
+    .login-content h2 {
+        font-size: 2.4rem;
+        margin: 8px 0;
+    }
+
+    .img img {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .img {
+        display: none;
+    }
+
+    .wave {
+        display: none;
+    }
+
+    .login-content {
+        justify-content: center;
+    }
+}
+
+
+/* ==============  Key Frames  ============== */
+
+@keyframes slideRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ==============  responsivity  ============== */
+@media(max-width: 1175px) {
+    :root {
+        --big-font: 2.3rem;
+        --h3-font: 2em;
+        --special-titre: 2.7rem;
+    }
+}
+
+
+
+
+
+@media(max-width: 670px) {
+    :root {
+        --big-font: 2.2rem;
+        --h3-font: 1.6em;
+        --special-titre: 2.4rem;
+    }
+}
+
+
+
+@media(max-width: 455px) {
+    :root {
+        --big-font: 1.8rem;
+        --h3-font: 1.2em;
+        --special-titre: 2rem;
+    }
+}
+
+@media(max-width: 380px) {
+    :root {
+        --big-font: 1.8rem;
+        --h3-font: 1em;
+        --special-titre: 2rem;
+        --logo-font: 2rem;
+    }
+}
